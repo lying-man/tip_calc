@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="icon" href="Images/favicon.png")
+        link(rel="stylesheet" href="CSS/style.css")
+        title Tip calculator
+    body 
+        main.main 
+            .box 
+                .logo 
+                    img(src="Images/logo.svg" alt="logo").logo-img
+                .content 
+                    .content-preferences 
+                        .input-block 
+                            .input-block-header 
+                                h2.input-title Доход
+                                span.input-message.error-bill Введите доход
+                            button.input-block-content.btn-bill
+                                .input-icon.dollar-icon
+                                    img(src="Images/icon-dollar.svg" alt="dollar")
+                                .input-item 
+                                    input(type="text" value="0").input-item__input.input-bill
+                        .input-block 
+                            .input-block-header 
+                                h2.input-title Выберите чаевые %
+                                span.input-message.error-select Ничего не выбрано
+                            .select-block-content
+                                button(data-procent="5").select-item 5%
+                                button(data-procent="10").select-item 10%
+                                button(data-procent="15").select-item 15%
+                                button(data-procent="25").select-item 25%
+                                button(data-procent="50").select-item 50%
+                                button.select-own 
+                                    .select-own-overlay Своё 
+                                    input(type="text" value="0" maxlength="3").select-own-input.input-select
+                        .input-block 
+                            .input-block-header 
+                                h2.input-title Количество человек
+                                span.input-message.error-people Введите количество
+                            button.input-block-content.btn-people
+                                .input-icon.person-icon
+                                    img(src="Images/icon-person.svg" alt="person")
+                                .input-item 
+                                    input(type="text" value="0").input-item__input.input-people
+                    .content-display
+                        .content-display-header 
+                            .display-block 
+                                .display-block-title 
+                                    .display-block-title__title Чаевые
+                                    .display-block-title__text / сотруднику
+                                .display-block-count.salary-one $0.00
+                            .display-block 
+                                .display-block-title 
+                                    .display-block-title__title Чаевые
+                                    .display-block-title__text / Общая сумма
+                                .display-block-count.salary-total $0.00
+                        .content-display-btn 
+                            button.btn-perform-actions Рассчитать
+        script(src="JS/main.js") 
+
+        
